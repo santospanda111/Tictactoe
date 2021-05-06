@@ -20,15 +20,32 @@ public class TicTacToeGame {
         if (symbol=="x"){        //Comparing the user input
             usersymbol= "x";
             computersymbol="o";
+            System.exit(0);
         }else if (symbol=="o"){
             usersymbol="o";
             computersymbol="x";
+            System.exit(0);
         }else{
             System.out.println("invalid option");
         }
     }
-    public static void main(String[]args){
-        TicTacToeGame tictactoe=new TicTacToeGame(); //created object for class TicTacToeGame.
+    public void showBoard(){
+        String horizontalPart = "+---";
+        String verticalPart = "|   ";
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                System.out.print(horizontalPart);
+            }
+            System.out.print("+\n");
+            for (int j = 0; j < 3; j++) {
+                System.out.print(verticalPart);
+            }
+            System.out.print("+\n");
+        }
+    }
 
+    public static void main(String[]args){
+        TicTacToeGame tictactoe=new TicTacToeGame(); //created object for class TicTacToeGame
+        tictactoe.showBoard();
     }
 }
