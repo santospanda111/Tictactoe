@@ -43,14 +43,25 @@ public class TicTacToeGame {
             System.out.print("+\n");
         }
     }
-    public void makeMove() {
+    public boolean makeMove() {
         Scanner Scan=new Scanner(System.in);
         System.out.println("Make your move by choosing number 1-9 :- ");
         int i=Scan.nextInt();
-        if (board[i] == ' ') {
-            board[i] = usersymbol;
-        } else {
-            System.out.println("Already occupied place.");
+        int player=1;
+        while (true) {
+            if (board[i] == ' ') {
+                if (player == 0) {
+                    System.out.println("Computer played: ");
+                    board[i] = computersymbol;
+                } else {
+                    System.out.println("Player played: ");
+                    board[i] = usersymbol;
+                }
+                showBoard();
+                return false;
+            } else {
+                return true;
+            }
         }
     }
 
