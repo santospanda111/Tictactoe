@@ -6,6 +6,7 @@ public class TicTacToeGame {
     TicTacToeGame(){
 
         createboard(); //inside the constructor am calling createboard method
+        tossForFirstPlay(); //making toss to start play
         takeUserInput();//inside the constructor am calling takeUserInput method
     }
     public void createboard(){  //created a method named createboard.
@@ -15,7 +16,7 @@ public class TicTacToeGame {
     }
     public void takeUserInput(){ //created a method named
         Scanner Sc=new Scanner(System.in);
-        System.out.println("Your turn: ");
+        System.out.println("Your turn:(Choose x or o) ");
         String symbol=Sc.next(); // taking user input to check
         if (symbol=="x"){        //Comparing the user input
             usersymbol= 'x';
@@ -62,6 +63,20 @@ public class TicTacToeGame {
             } else {
                 return true;
             }
+        }
+    }
+    public void tossForFirstPlay() {
+        int player;
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter Toss (H or T):");
+        String toss=sc.next();
+        int i = (int) Math.round(Math.random()) % 2;
+        if ((i == 1 && toss.equals("H")) || (i == 0 && toss.equals("T"))) {
+            System.out.println("Congratulations! You've won the Toss.");
+            player = 1;
+        } else {
+            System.out.println("You've lost Toss. Computer plays first.");
+            player = 0;
         }
     }
 
