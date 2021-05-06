@@ -78,7 +78,10 @@ public class TicTacToeGame {
         if (board[index] == ' ') {
             if (player == 0) {
                 System.out.println("Computer played: ");
-                board[index] = computersymbol;
+                for (int i=0;i<3;i++){
+                    board[index] = computersymbol;
+                }
+                blockOpponent();
             } else {
                 System.out.println("Player played: ");
                 board[index] = usersymbol;
@@ -199,6 +202,80 @@ public class TicTacToeGame {
             System.out.println("Player can Win! from Computer");
         }
 
+    }
+    private void blockOpponent(){
+        if(board[1] == usersymbol && board[2] == usersymbol){
+            board[3]=computersymbol;
+        }
+        if(board[9] == usersymbol && board[6] == usersymbol){
+            board[3]=computersymbol;
+        }
+        if(board[7] == usersymbol && board[5] == usersymbol){
+            board[3]=computersymbol;
+        }
+        if(board[3] == usersymbol && board[2] == usersymbol){
+            board[1]=computersymbol;
+        }
+        if(board[9] == usersymbol && board[5] == usersymbol){
+            board[1]=computersymbol;
+        }
+        if(board[7] == usersymbol && board[4] == usersymbol){
+            board[1]=computersymbol;
+        }
+        if(board[3] == usersymbol && board[1] == usersymbol){
+            board[2]=computersymbol;
+        }
+        if (board[8] == usersymbol && board[5] == usersymbol){
+            board[2]=computersymbol;
+        }
+        if (board[1] == usersymbol && board[4] == usersymbol){
+            board[7]=computersymbol;
+        }
+        if(board[3] == usersymbol && board[5] == usersymbol){
+            board[7]=computersymbol;
+        }
+        if(board[8] == usersymbol && board[9] == usersymbol){
+            board[7]=computersymbol;
+        }
+        if(board[1] == usersymbol && board[5] == usersymbol){
+            board[9]=computersymbol;
+        }
+        if(board[3] == usersymbol && board[6] == usersymbol){
+            board[9]=computersymbol;
+        }
+        if(board[7] == usersymbol && board[8] == usersymbol){
+            board[9]=computersymbol;
+        }
+        if(board[5] == usersymbol && board[2] == usersymbol){
+            board[8]=computersymbol;
+        }
+        if(board[9] == usersymbol && board[7] == usersymbol){
+            board[8]=computersymbol;
+        }
+        if(board[5] == usersymbol && board[6] == usersymbol){
+            board[4]=computersymbol;
+        }
+        if (board[1] == usersymbol && board[7] == usersymbol){
+            board[4]=computersymbol;
+        }
+        if(board[1] == usersymbol && board[9] == usersymbol){
+            board[5]=computersymbol;
+        }
+        if(board[3] == usersymbol && board[7] == usersymbol){
+            board[5]=computersymbol;
+        }
+        if(board[2] == usersymbol && board[8] == usersymbol){
+            board[5]=computersymbol;
+        }
+        if(board[4] == usersymbol && board[6] == usersymbol){
+            board[5]=computersymbol;
+        }
+        if(board[5] == usersymbol && board[4] == usersymbol){
+            board[6]=computersymbol;
+        }
+        if (board[9] == usersymbol && board[3] == usersymbol){
+            board[6]=computersymbol;
+        }
     }
 
     /**
