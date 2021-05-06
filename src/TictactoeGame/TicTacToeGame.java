@@ -2,7 +2,7 @@ package TictactoeGame;
 import java.util.Scanner;
 public class TicTacToeGame {
     private char board[]=new char[10]; //created a tictactoe board of size 10
-    private String usersymbol,computersymbol;
+    private char usersymbol,computersymbol;
     TicTacToeGame(){
 
         createboard(); //inside the constructor am calling createboard method
@@ -18,12 +18,12 @@ public class TicTacToeGame {
         System.out.println("Your turn: ");
         String symbol=Sc.next(); // taking user input to check
         if (symbol=="x"){        //Comparing the user input
-            usersymbol= "x";
-            computersymbol="o";
+            usersymbol= 'x';
+            computersymbol='o';
             System.exit(0);
         }else if (symbol=="o"){
-            usersymbol="o";
-            computersymbol="x";
+            usersymbol='o';
+            computersymbol='x';
             System.exit(0);
         }else{
             System.out.println("invalid option");
@@ -43,9 +43,20 @@ public class TicTacToeGame {
             System.out.print("+\n");
         }
     }
+    public void makeMove() {
+        Scanner Scan=new Scanner(System.in);
+        System.out.println("Make your move by choosing number 1-9 :- ");
+        int i=Scan.nextInt();
+        if (board[i] == ' ') {
+            board[i] = usersymbol;
+        } else {
+            System.out.println("Already occupied place.");
+        }
+    }
 
     public static void main(String[]args){
         TicTacToeGame tictactoe=new TicTacToeGame(); //created object for class TicTacToeGame
         tictactoe.showBoard();
+        tictactoe.makeMove();
     }
 }
