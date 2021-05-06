@@ -31,18 +31,16 @@ public class TicTacToeGame {
         }
     }
     public void showBoard(){
-        String horizontalPart = "+---";
-        String verticalPart = "|   ";
+        String horizontalPart = "+---+---+---+";
         for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-                System.out.print(horizontalPart);
+            System.out.println(horizontalPart);
+            for (int j = 1; j < 4; j++) {
+                System.out.print("| " + board[i * 3 + j] + " ");
             }
-            System.out.print("+\n");
-            for (int j = 0; j < 3; j++) {
-                System.out.print(verticalPart);
-            }
-            System.out.print("+\n");
+            System.out.print("|\n");
         }
+        System.out.print(horizontalPart);
+        System.out.print("\n");
     }
     public boolean makeMove() {
         Scanner Scan=new Scanner(System.in);
