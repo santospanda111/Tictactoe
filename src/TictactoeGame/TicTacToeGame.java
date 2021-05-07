@@ -118,6 +118,9 @@ public class TicTacToeGame {
             if (player == 0) {
                 computerPlay();
                 player = 1;
+                if (index == 9) {
+                    System.out.println("Game Draw!");
+                    System.exit(0);}
             } else {
                 checkUserCanWin();
                 System.out.println("Select Position (1-9): ");
@@ -125,12 +128,12 @@ public class TicTacToeGame {
                     System.out.println("Try different place.");
                 }
                 player = 0;
+                if (index == 9) {
+                    System.out.println("Game Draw!");
+                    System.exit(0);}
             }
         }
-        if (index == 9) {
-            System.out.println("Game Draw!");
-            System.exit(0);
-        }
+
     }
 
     /**
@@ -291,4 +294,3 @@ public class TicTacToeGame {
 
     }
 }
-
