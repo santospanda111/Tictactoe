@@ -121,6 +121,7 @@ public class TicTacToeGame {
             } else {
                 checkUserCanWin();
                 cornorAvailability();
+                centerAvailability();
                 System.out.println("Select Position (1-9): ");
                 while (makeMove(SCANNER.nextInt(), player)) {
                     System.out.println("Try different place.");
@@ -296,6 +297,14 @@ public class TicTacToeGame {
             } else if (board[9] == emptyspace) {
                 System.out.println("select 9th position -- Cornor is available");
             }
+    }
+    public static void centerAvailability(){
+        if(board[5] == emptyspace){
+            System.out.println("Center position is available");
+        }else{
+            System.out.println("Center position is not available..Try another position");
+        }
+
     }
 
     /**
